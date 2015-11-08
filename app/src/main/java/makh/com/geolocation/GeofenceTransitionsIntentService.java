@@ -28,6 +28,7 @@ import java.util.List;
  */
 public class GeofenceTransitionsIntentService extends IntentService {
 
+
     protected static final String TAG = "geofence-transitions-service";
     AudioManager audiomanage;
     /**
@@ -40,11 +41,6 @@ public class GeofenceTransitionsIntentService extends IntentService {
 
     }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        audiomanage = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-    }
 
     /**
      * Handles incoming intents.
@@ -87,6 +83,7 @@ public class GeofenceTransitionsIntentService extends IntentService {
             // Log the error.
             Log.e(TAG, getString(R.string.geofence_transition_invalid_type, geofenceTransition));
         }
+
     }
 
     /**
