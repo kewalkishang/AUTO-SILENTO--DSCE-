@@ -59,9 +59,17 @@ public class GeofenceTransitionsIntentService extends IntentService {
 
         // Get the transition type.
         int geofenceTransition = geofencingEvent.getGeofenceTransition();
-        if(geofenceTransition!=-1){
+        if(geofenceTransition==1){
+            audiomanage = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
             audiomanage.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         }
+        else
+        if(geofenceTransition==2){
+            audiomanage = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            audiomanage.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+        }
+
+
         // Test that the reported transition was of interest.
         if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER ||
                 geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT) {

@@ -249,6 +249,7 @@ public class MainActivity extends ActionBarActivity implements
                             R.string.geofences_removed),
                     Toast.LENGTH_SHORT
             ).show();
+
         } else {
             // Get the status code for the error and log it using a user-friendly message.
             String errorMessage = GeofenceErrorMessages.getErrorString(this,
