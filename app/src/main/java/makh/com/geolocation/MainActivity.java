@@ -1,8 +1,10 @@
 package makh.com.geolocation;
 
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -48,7 +50,7 @@ public class MainActivity extends ActionBarActivity implements
      * Provides the entry point to Google Play services.
      */
     protected GoogleApiClient mGoogleApiClient;
-
+    AudioManager audiomanage;
     /**
      * The list of geofences used in this sample.
      */
@@ -249,6 +251,10 @@ public class MainActivity extends ActionBarActivity implements
                             R.string.geofences_removed),
                     Toast.LENGTH_SHORT
             ).show();
+            if(mGeofencesAdded==false) {
+                audiomanage = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                audiomanage.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+            }
 
         } else {
             // Get the status code for the error and log it using a user-friendly message.
