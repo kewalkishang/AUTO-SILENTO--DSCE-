@@ -11,7 +11,7 @@ public final class Constants {
     private Constants() {
     }
 
-    public static final String PACKAGE_NAME = "com.google.android.gms.location.Geofence";
+    public static final String PACKAGE_NAME = "makh.com.geolocation";
 
     public static final String SHARED_PREFERENCES_NAME = PACKAGE_NAME + ".SHARED_PREFERENCES_NAME";
 
@@ -28,17 +28,17 @@ public final class Constants {
      */
     public static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS =
             GEOFENCE_EXPIRATION_IN_HOURS * 60 * 60 * 1000;
-    public static final float GEOFENCE_RADIUS_IN_METERS = 1000; // 1 mile, 1.6 km
+    public static final float GEOFENCE_RADIUS_IN_METERS = 200; // 1 mile, 1.6 km
 
     /**
-     * Map for storing information about airports in the San Francisco bay area.
+     * Map for storing information about dayananda sagar college of engg
      */
     public static final HashMap<String, LatLng> BAY_AREA_LANDMARKS = new HashMap<String, LatLng>();
     static {
         // San Francisco International Airport.
-        BAY_AREA_LANDMARKS.put("college", new LatLng(12.908534, 77.566252));
+        BAY_AREA_LANDMARKS.put("DSCE", new LatLng(12.908776, 77.5661842));
 
         // Googleplex.
-        BAY_AREA_LANDMARKS.put("house", new LatLng( 12.910047599999999, 77.57114669999999));
+       // BAY_AREA_LANDMARKS.put("house", new LatLng( 12.910047599999999, 77.57114669999999));
     }
 }
